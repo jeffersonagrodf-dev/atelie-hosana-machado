@@ -45,6 +45,7 @@ type Produto = {
   destaque?: boolean;
   selo?: string;
   cta?: string;
+  whatsappMessage?: string;
 };
 
 const produtos = produtosData as Produto[];
@@ -60,6 +61,8 @@ function ProductImage({ produto }: { produto: Produto }) {
     "sagrada-familia-28cm",
     "nossa-senhora-gravida-branco-azul",
     "nossa-senhora-gravida-azul-rosa",
+    "terco-pulseira-cristal-varias-cores",
+    "terco-noiva-personalizado-perolas-zirconias",
   ].includes(produto.id);
 
   if (!primary) {
@@ -177,7 +180,7 @@ function Catalog() {
               }`}
             >
               <a
-                href={waLink(undefined, p.titulo)}
+                href={p.whatsappMessage ? waLink(p.whatsappMessage) : waLink(undefined, p.titulo)}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Encomendar ${p.titulo} pelo WhatsApp`}
@@ -218,7 +221,7 @@ function Catalog() {
                     </div>
                   </div>
                   <a
-                    href={waLink(undefined, p.titulo)}
+                    href={p.whatsappMessage ? waLink(p.whatsappMessage) : waLink(undefined, p.titulo)}
                     target="_blank"
                     rel="noreferrer"
                     className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium text-white transition ${

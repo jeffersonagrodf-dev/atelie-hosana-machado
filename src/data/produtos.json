@@ -59,6 +59,37 @@
     "cta": "Escolher este modelo"
   },
   {
+    "id": "terco-pulseira-cristal-varias-cores",
+    "titulo": "Terço Pulseira de Cristal — Várias Cores",
+    "descricao": "Inspirada nas cores e na beleza da criação de Deus, esta delicada pulseira de cristais une fé, oração e amor em cada detalhe.\n\nMais do que um acessório, ela é um sinal da fé que nos move e uma lembrança para confiarmos a Deus aqueles que amamos. Que cada conta tocada durante a oração fortaleça o coração, renove a esperança e nos aproxime do amor divino.\n\nEscolha a cor que mais combina com você ou presenteie alguém especial com um gesto de carinho, proteção e fé.",
+    "preco": "R$ 32,90",
+    "precoAnterior": "",
+    "categoriaId": "tercos-e-pulseiras",
+    "categoria": "Terços e Pulseiras",
+    "imagens": [
+      "/produtos/terco-pulseira-cristal-varias-cores.png"
+    ],
+    "codigo": "",
+    "cta": "Quero minha pulseira de oração",
+    "whatsappMessage": "Olá! Tenho interesse no Terço Pulseira de Cristal — Várias Cores, no valor de R$ 32,90."
+  },
+  {
+    "id": "terco-noiva-personalizado-perolas-zirconias",
+    "titulo": "Terço de Noiva Personalizado — Pérolas e Zircônias",
+    "descricao": "Uma joia de fé criada para acompanhar a noiva em um dos momentos mais sagrados de sua vida.\n\nConfeccionado com pérolas de vidro de 10 mm, este terço possui crucifixo e contas do Pai-Nosso em zircônias, entremeio da Sagrada Família e delicado banho prateado.\n\nO pingente pode ser personalizado com fotografia, santo de devoção e iniciais, transformando cada peça em uma lembrança única da união, da família e das pessoas amadas.\n\nMais do que um acessório para o casamento, é um símbolo de oração e proteção para conduzir a noiva ao altar e permanecer como memória de fé por toda a vida.",
+    "preco": "R$ 380,00",
+    "precoAnterior": "",
+    "categoriaId": "tercos-personalizados",
+    "categoria": "Terços Personalizados",
+    "imagens": [
+      "/produtos/terco-noiva-personalizado-perolas-zirconias.png"
+    ],
+    "codigo": "",
+    "selo": "Joia de Fé",
+    "cta": "Quero personalizar meu Terço de Noiva",
+    "whatsappMessage": "Olá! Tenho interesse no Terço de Noiva Personalizado — Pérolas e Zircônias, no valor de R$ 380,00."
+  },
+  {
     "id": "AkpDvb49LhougnGggMTC",
     "titulo": "Chaveiro Santa Teresinha medalhas",
     "descricao": "",

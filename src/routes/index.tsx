@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { LiturgyWidget } from "@/components/layout/LiturgyWidget";
 import { site, waLink } from "@/config/site";
 import { ArrowRight, Heart, Sparkles, Sun } from "lucide-react";
+import produtosData from "@/data/produtos.json";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -64,6 +65,8 @@ function Home() {
       </section>
 
       <QuaresmaSaoMiguelBanner />
+
+      <NewProducts />
 
       <LiturgyWidget />
 
@@ -204,6 +207,104 @@ function Home() {
         </div>
       </section>
     </>
+  );
+}
+
+type HomeProduct = {
+  id: string;
+  titulo: string;
+  descricao: string;
+  preco: string;
+  imagens: string[];
+  categoria: string;
+  cta?: string;
+  selo?: string;
+  whatsappMessage?: string;
+};
+
+const homeProductIds = [
+  "terco-pulseira-cristal-varias-cores",
+  "terco-noiva-personalizado-perolas-zirconias",
+];
+
+function NewProducts() {
+  const products = (produtosData as HomeProduct[]).filter((product) =>
+    homeProductIds.includes(product.id),
+  );
+
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-20">
+      <header className="mx-auto max-w-2xl text-center">
+        <div className="text-xs uppercase tracking-[0.24em] text-[color:var(--gold)]">
+          Novidades do Ateliê
+        </div>
+        <h2 className="mt-3 font-serif text-3xl text-[color:var(--ink)] md:text-5xl">
+          Fé que acompanha momentos especiais
+        </h2>
+        <p className="mt-4 text-[color:var(--muted-ink)]">
+          Peças artesanais para transformar oração, carinho e memória em presentes cheios de significado.
+        </p>
+      </header>
+
+      <div className="mt-10 grid gap-8 md:grid-cols-2">
+        {products.map((product) => (
+          <article
+            key={product.id}
+            className="group overflow-hidden rounded-[2rem] border border-[color:var(--gold)]/25 bg-white shadow-[0_24px_60px_-38px_rgba(94,62,22,0.5)]"
+          >
+            <div className="relative aspect-square overflow-hidden bg-[color:var(--cream)]">
+              {product.selo ? (
+                <span className="absolute left-4 top-4 z-10 rounded-full bg-[color:var(--ink)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white">
+                  {product.selo}
+                </span>
+              ) : null}
+              <img
+                src={product.imagens[0]}
+                alt={product.titulo}
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-contain p-3 transition duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
+            <div className="p-6 md:p-8">
+              <div className="text-[11px] uppercase tracking-[0.2em] text-[color:var(--gold)]">
+                {product.categoria}
+              </div>
+              <h3 className="mt-2 font-serif text-2xl text-[color:var(--ink)] md:text-3xl">
+                {product.titulo}
+              </h3>
+              <p className="mt-3 line-clamp-4 whitespace-pre-line text-sm leading-relaxed text-[color:var(--muted-ink)]">
+                {product.descricao}
+              </p>
+              <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="font-serif text-3xl text-[color:var(--sepia)]">{product.preco}</div>
+                <a
+                  href={
+                    product.whatsappMessage
+                      ? waLink(product.whatsappMessage)
+                      : waLink(undefined, product.titulo)
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[color:var(--gold)] px-5 py-3 text-center text-sm font-medium text-white transition hover:bg-[color:var(--ink)]"
+                >
+                  {product.cta ?? "Encomendar"}
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div className="mt-8 text-center">
+        <Link
+          to="/catalogo"
+          className="inline-flex items-center gap-2 rounded-full border border-[color:var(--gold)]/40 bg-white/70 px-6 py-3 text-sm text-[color:var(--ink)] transition hover:border-[color:var(--gold)]"
+        >
+          Ver todos os produtos <ArrowRight size={15} />
+        </Link>
+      </div>
+    </section>
   );
 }
 
